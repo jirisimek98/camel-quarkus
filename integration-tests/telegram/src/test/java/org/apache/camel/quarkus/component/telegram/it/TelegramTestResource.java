@@ -33,7 +33,7 @@ public class TelegramTestResource extends WireMockTestResourceLifecycleManager {
     public Map<String, String> start() {
         Map<String, String> properties = super.start();
         String wireMockUrl = properties.get("wiremock.url");
-        String baseUri = wireMockUrl != null ? wireMockUrl : TELEGRAM_API_BASE_URL;
+        String baseUri = TELEGRAM_API_BASE_URL;
         return CollectionHelper.mergeMaps(properties,
                 CollectionHelper.mapOf("camel.component.telegram.base-uri", baseUri));
     }
